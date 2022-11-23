@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Authenticated from './layout/Authenticated';
+import Unauthenticated from './layout/Unauthenticated';
+import Clock from 'components/Clock';
+import styles from './App.module.scss';
+import { useSettingsContext } from 'context/SettingsContext';
 
+/**
+ * Simple Electron app used to render daily necessities from a variety of sources.
+ *
+ * @author  John Robert McCann
+ * @since   11/16/2022
+ * @version 1.0.0
+ * @returns {Element} Renders the conditional layout depending on authenticated state.
+ */
 function App() {
+  const { authenticated } = useSettingsContext();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={styles.main}>
+      {authenticated ? <Authenticated /> : <Unauthenticated />}
+      <Clock />
+    </main>
   );
 }
 
