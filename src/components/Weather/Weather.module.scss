@@ -1,11 +1,8 @@
 .weather {
-  flex-direction: column;
   font-size: 20px;
-  align-items: flex-start;
-  padding: 25px;
 
   li {
-    text-align: right;
+    text-align: left;
     margin-bottom: 10px;
     list-style: none;
     text-transform: capitalize;

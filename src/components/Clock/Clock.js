@@ -21,8 +21,8 @@ export default function Clock() {
 
   return (
     <div className={styles.clock}>
-      <span>{dateState.format('ddd, LT')}</span>
-      <span>{dateState.format('LL')}</span>
+      <span>{dateState.format('ddd LL')}</span>
+      <span>{dateState.format('LT')}</span>
     </div>
   );
 }

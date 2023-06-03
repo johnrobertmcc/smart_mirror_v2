@@ -1,8 +1,6 @@
-import Authenticated from './layout/Authenticated';
-import Unauthenticated from './layout/Unauthenticated';
 import Clock from 'components/Clock';
 import styles from './App.module.scss';
-import { useSettingsContext } from 'context/SettingsContext';
+import Layout from './layout';
 
 /**
  * Simple Electron app used to render daily necessities from a variety of sources.
@@ -13,10 +11,10 @@ import { useSettingsContext } from 'context/SettingsContext';
  * @returns {Element} Renders the conditional layout depending on authenticated state.
  */
 function App() {
-  const { authenticated } = useSettingsContext();
+
   return (
     <main className={styles.main}>
-      {authenticated ? <Authenticated /> : <Unauthenticated />}
+      <Layout />
       <Clock />
     </main>
   );
